@@ -7,13 +7,11 @@ export default function Header(){
     const a = require("../../../assets/elipse-perfil.png")
     const [showBalance, setShowBalance] = React.useState(false);
     //caso o showBalance seja true, ele mostra o valor, caso seja false, ele mostra um container cinza
-    const balance = (showBalance) => {
+    const balance = () => {
         if (showBalance) {
             return 'R$ 1.000.000,00';
         }
-        return(
-            <View style={{backgroundColor: '#908D91', height: 28, width: 250}}></View>
-        )
+        return '********'
     }
 
     return(
@@ -74,7 +72,7 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 16,
-        fontWeight: 'regular',
+        fontWeight: 'bold'
     },
     balance: {
         fontSize: 16,
