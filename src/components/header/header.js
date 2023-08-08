@@ -1,18 +1,13 @@
 import React from "react";
 import{ View, StyleSheet, Text,TouchableOpacity, Image } from 'react-native'
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import BalanceAcc from "../balance-account";
 
 
-export default function Header(){
+export default function Header({hidden}){
     const a = require("../../../assets/elipse-perfil.png")
     const [showBalance, setShowBalance] = React.useState(false);
-    //caso o showBalance seja true, ele mostra o valor, caso seja false, ele mostra um container cinza
-    const balance = () => {
-        if (showBalance) {
-            return 'R$ 1.000.000,00';
-        }
-        return '********'
-    }
+    
 
     return(
         <View >
@@ -21,7 +16,11 @@ export default function Header(){
                     <TouchableOpacity >
                         <Image style={{width: 48, height:46}} source={a} />
                     </TouchableOpacity>
-                    <Text style={styles.username}> Olá, Camila </Text>
+                    {hidden ? (
+                        <Text></Text>
+                    ) : (
+                        <Text style={styles.username}> Olá, Camila </Text>
+                    )}
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity onPress={() => setShowBalance(!showBalance)}>
@@ -35,14 +34,14 @@ export default function Header(){
                     <MaterialCommunityIcons name="email-plus-outline" size={25} color="#fff" />
                 </View>    
             </View>
-            <View style={styles.div}>
-                <View style={styles.row}>
-                    <Text style={styles.subtitle}> Conta </Text>
-                    <Ionicons name="chevron-forward-outline" size={20} color="#908D91" />
-                </View>
-                <Text style={styles.balance}> {balance(showBalance)} </Text>
-            </View>
-                
+            
+            {hidden ? (
+                <Text></Text>
+            ) : (
+                <BalanceAcc showBalance={showBalance}/>
+            )}
+            
+
         </View>
     )
 }
@@ -76,21 +75,5 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold'
     },
-    balance: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        marginTop: 8,
-        marginLeft: 16,
-    },
-    div: {
-        backgroundColor: '#fff',
-    },
-    row: {
-        backgroundColor: '#fff',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingStart: 16,
-        paddingEnd: 16,
-        paddingTop: 16,
-    },
+    
 });
