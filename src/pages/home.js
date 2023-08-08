@@ -3,6 +3,7 @@ import { Ionicons, Foundation } from '@expo/vector-icons';
 import Payments from '../components/payments';
 import Adverts from '../components/advertisement';
 import Header from '../components/header/header';
+import Discover from '../components/Discover';
 
 export default function Home(){
     const card = require("../../assets/card.png")
@@ -61,6 +62,7 @@ export default function Home(){
                     </View>
 
                 </View>
+                <Discover/>
             </View>
         </ScrollView>
         
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         padding: 16,
-        paddingBottom: 100,
+        paddingBottom: 120,
     },
     div: {
         flexDirection: 'column',
