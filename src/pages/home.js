@@ -8,7 +8,7 @@ export default function Home(){
     const card = require("../../assets/card.png")
     return(
         <ScrollView>
-            <Header/>
+            <Header hidden={false}/>
             <View style={styles.container}>
                 <Payments/>
                 <View style={styles.box}>
