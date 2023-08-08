@@ -1,6 +1,6 @@
 import React from "react";
 import{ View, StyleSheet, Text,TouchableOpacity, Image } from 'react-native'
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 export default function Header(){
@@ -15,7 +15,7 @@ export default function Header(){
     }
 
     return(
-        <>
+        <View >
             <View style={styles.container}>
                 <View style={styles.content}>
                     <TouchableOpacity >
@@ -32,16 +32,18 @@ export default function Header(){
                         )}
                     </TouchableOpacity>
                     <Ionicons name="help-circle-outline" size={25} color="#fff" />
-                    <Ionicons name="mail-outline" size={25} color="#fff" />
+                    <MaterialCommunityIcons name="email-plus-outline" size={25} color="#fff" />
                 </View>    
             </View>
-            <View style={styles.row}>
-                <Text style={styles.subtitle}> Conta </Text>
-                <Ionicons name="chevron-forward-outline" size={20} color="#908D91" />
+            <View style={styles.div}>
+                <View style={styles.row}>
+                    <Text style={styles.subtitle}> Conta </Text>
+                    <Ionicons name="chevron-forward-outline" size={20} color="#908D91" />
+                </View>
+                <Text style={styles.balance}> {balance(showBalance)} </Text>
             </View>
-            <Text style={styles.balance}> {balance(showBalance)} </Text>
                 
-        </>
+        </View>
     )
 }
 
@@ -80,7 +82,11 @@ const styles = StyleSheet.create({
         marginTop: 8,
         marginLeft: 16,
     },
+    div: {
+        backgroundColor: '#fff',
+    },
     row: {
+        backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingStart: 16,
