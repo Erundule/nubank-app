@@ -42,10 +42,10 @@ export function CustomTabBar({ state, descriptors, navigation }) {
               style={styles.buttonTab}
             >
               <View style={{  alignItems: 'center', padding: 4}}>
-                <View style={{ padding:8, borderRadius: 99, backgroundColor: isFocused ? "#F8E2FD" : "transparent"}}>
+                <View style={{ padding:8, borderRadius: 99, }}>
                   <MaterialIcons
                     name={options.tabBarIcon}
-                    size={34}
+                    size={28}
                     color={isFocused ? '#8F2ABD' : '#535353'}
                   />
                 </View>
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
   container:{
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red', 
+    backgroundColor: '#FFF',
+    
   },
   content:{
     marginBottom: Platform.OS === 'ios' ? 38 : 24,
@@ -73,8 +74,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     backgroundColor: 'rgba(255,255,255,0.9)', 
     flexDirection: 'row',
-    borderRadius: 99,
-    gap: 8,
+    padding: 22,
+    paddingTop: 10,
+    // borderRadius: 99,
+    gap: 78,
     elevation: 10,
     shadowColor: '#000',
     shadowOffset: {

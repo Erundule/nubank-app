@@ -28,7 +28,7 @@ export function Routes(){
         name="Home" 
         component={Home} 
         options={{
-          tabBarIcon: 'compare-arrows',
+          tabBarIcon: 'swap-vert',
         }}
       />
       <Tab.Screen 
@@ -42,7 +42,7 @@ export function Routes(){
         name="Store" 
         component={Store} 
         options={{
-          tabBarIcon: 'storefront',
+          tabBarIcon: 'shopping-bag',
         }}
       />
     </Tab.Navigator>
