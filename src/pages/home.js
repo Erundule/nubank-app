@@ -1,4 +1,4 @@
-import {Image, StyleSheet,Text, View} from 'react-native'
+import {Image, ScrollView, StyleSheet,Text, View} from 'react-native'
 import { Ionicons, Foundation } from '@expo/vector-icons';
 import Payments from '../components/payments';
 import Adverts from '../components/advertisement';
@@ -8,7 +8,7 @@ import Discover from '../components/Discover';
 export default function Home(){
     const card = require("../../assets/card.png")
     return(
-        <View>
+        <ScrollView>
             <Header hidden={false}/>
             <View style={styles.container}>
                 <Payments/>
@@ -64,7 +64,7 @@ export default function Home(){
                 </View>
                 <Discover/>
             </View>
-        </View>
+        </ScrollView>
         
     );
 }
