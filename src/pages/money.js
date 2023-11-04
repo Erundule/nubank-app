@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { Ionicons, Entypo, FontAwesome, Feather } from '@expo/vector-icons';
 import Header from '../components/header/header';
 
 export default function Money() {
     return (
-        <>
+        <ScrollView>
             <Header hidden={true} />
             <View style={styles.container}>
                 <Text style={styles.title}>Acompanhe seu dinheiro</Text>
@@ -41,7 +41,7 @@ export default function Money() {
                     </View>
                 </View>
             </View>
-        </>
+        </ScrollView>
     );
 }
 

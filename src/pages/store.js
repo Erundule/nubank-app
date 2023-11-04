@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import Header from '../components/header/header';
 
 export default function Store() {
     return (
-        <>
+        <ScrollView>
             <Header hidden={true} />
             <View style={styles.container}>
                 <Text style={styles.title}>Loja</Text>
             </View>
-        </>
+        </ScrollView>
     );
 }
 
